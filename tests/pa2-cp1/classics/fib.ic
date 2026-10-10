@@ -1,0 +1,18 @@
+class Fib {
+    int fib(int n) {
+        if (n < 2) {
+            return n;
+        }
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    void main(string[] args) {
+        int i = 0;
+        while (i < 15) {
+            Library.printi(fib(i));
+            Library.print(" ");
+            i = i + 1;
+        }
+        Library.print("\n");
+    }
+}

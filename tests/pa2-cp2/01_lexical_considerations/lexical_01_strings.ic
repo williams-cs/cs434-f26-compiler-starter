@@ -1,0 +1,7 @@
+class a{
+	int main(){
+		string s = "a\r";
+		return 0;
+	}
+}
+

@@ -1,0 +1,13 @@
+class A{
+	int b;
+	 void main(string[] args){
+		string s = "a";
+		b = 1 / /* b - c * d;
+		c = new char + 2;
+		d = e;
+		if(0) return true;
+		*/ 2 - 7;
+		return;
+	}
+}
+

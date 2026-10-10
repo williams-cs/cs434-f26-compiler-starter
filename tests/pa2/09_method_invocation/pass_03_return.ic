@@ -1,0 +1,10 @@
+class R{
+	void main(string[] args){
+		int b = a(1, "2", new int[3]);
+	}
+
+	int a(int a, string b, int[] c){
+		if(true) return a + c.length;
+	}
+}
+

@@ -1,0 +1,14 @@
+class BREAK{
+	void main(string[] args){
+		while(true){
+			break;
+			while(true){
+				while(true){
+					break;
+				}
+			}
+		}
+		break;
+	}
+}
+

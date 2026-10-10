@@ -1,0 +1,3 @@
+class N extends M{
+	 void main(string[] args){}
+}

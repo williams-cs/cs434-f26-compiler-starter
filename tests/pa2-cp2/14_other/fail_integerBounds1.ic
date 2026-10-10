@@ -1,0 +1,15 @@
+// time to check integer bounds!
+class IntegerBounds01 {
+
+	int i;
+
+	void main (string []args) {
+		i = 2147483647;		// ok
+		i =-2147483648; 	// ok
+		i = 2147483647+1; 	// ok, no constant folding yet
+		i =-2147483648-1;	// ok, no constant folding yet
+
+		i = 2147483648;		// fail!
+	}
+
+}

@@ -1,0 +1,46 @@
+# ic.scup -- the Iced Coffee grammar.  THIS is your parser: each
+# nonterminal of your grammar becomes a rule below, with an action
+# block of Scala that builds your AST node from the production's
+# symbols ($1, $2, ... over all symbols, $i.text/$i.line/$i.value on
+# tokens).  Terminals in quotes come from ic.slex's %token table;
+# bare names are token kinds or other rules.
+#
+#   rule ::= sym sym sym   { Node($1.text, $3, $1.line) }
+#          | %empty        { ... }
+#          ;
+#
+# Declare `%type rule: YourNodeType` as you design your AST: the
+# action blocks are then statically checked against the grammar, with
+# errors at the lines of this file.  The EBNF shorthands x?, x*, x+
+# match the course handouts, and %list(x, sep) is a sep-separated
+# list (x? produces an Option, the list forms produce List, and an
+# un-blocked %empty produces None -- so such a rule's %type must be
+# an Option).  A %left/%right block
+# followed by `rule ::= %binary(operand) { ... }` builds a whole
+# precedence ladder; %chain(base, suffixRule) runs a postfix loop
+# with $$ bound to the expression built so far; %greedy before a rule
+# resolves the dangling else.
+#
+# Three systematic changes from the "raw" grammar in the IC spec make
+# it LL(1) (see the spec's LL(1) appendix, and HW 2):
+#
+#  - No left recursion.  Left-recursive rules such as
+#      Expr ::= Expr '+' Expr
+#    become a %binary precedence ladder or %chain postfix loops.
+#
+#  - Alternatives that share a prefix must be left-factored until one
+#    token of lookahead decides.  The spec's appendix works two of
+#    these for you (class members, `new`); the statement rule and
+#    `primary` are yours -- when you get them wrong, the LL(1) check
+#    rejects the grammar and names the conflicting productions.
+#    (`sbt "runMain scup.check ic.scup"` checks the grammar alone.)
+#
+#  - The dangling else needs the one %greedy rule.
+#
+# TODO: replace the stub below with the full IC grammar, adding
+# %type declarations as you design your AST nodes.
+
+%start  program
+
+# The stub grammar: a "program" is just the keyword `class`.
+program ::= "class" ;

@@ -1,0 +1,26 @@
+class A {
+	int a;
+	boolean f;
+}
+
+class B extends A {
+	int b;
+}
+
+class Constants {
+	A aObj;
+	B bObj;
+	int a, b, c, d;
+	string s1, s2;
+	A[] array1;
+	B[] array2;
+	
+	void main(string[]args) {
+		(new Constants()).doStuff();
+	}
+	
+	void doStuff() {
+		a = a - b * c / d + array1.length;
+		aObj.f = bObj.b == aObj.a && bObj.f || !aObj.f || a >= b != c < d;
+	}
+}

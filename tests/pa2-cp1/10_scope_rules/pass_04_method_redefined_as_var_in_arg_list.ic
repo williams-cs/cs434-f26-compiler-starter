@@ -1,0 +1,13 @@
+class N{
+	void main(string[] args){}
+	
+	void test() {
+		int test = 0;
+		b(test);
+		
+	}
+	int b(int b){
+		return b;
+	}
+}
+

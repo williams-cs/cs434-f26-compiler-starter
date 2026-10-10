@@ -1,0 +1,5 @@
+class Hello {
+    void main(string[] args) {
+        Library.println("Hello, world!");
+    }
+}

@@ -1,0 +1,8 @@
+class A{
+	int	A;
+}
+
+class B{
+	 void main(string[] args){
+	}
+}

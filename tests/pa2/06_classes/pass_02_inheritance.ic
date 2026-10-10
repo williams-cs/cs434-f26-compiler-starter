@@ -1,0 +1,15 @@
+class M{
+	int a;
+	int b;
+}
+
+class N extends M{
+	int[] bb;
+	M m;
+	 void main(string[] args){}
+	
+	void test() {
+		bb[0] = m.a;
+	}
+}
+

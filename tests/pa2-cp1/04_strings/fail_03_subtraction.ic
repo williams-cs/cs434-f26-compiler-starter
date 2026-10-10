@@ -1,0 +1,6 @@
+class D{
+	 void main(string[] args){
+		string a = args[0] - args[1];
+	}
+}
+

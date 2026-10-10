@@ -1,0 +1,10 @@
+class P{
+	 void main(string[] args){
+		P p;
+		Q q;
+	}
+}
+
+class Q{
+}
+

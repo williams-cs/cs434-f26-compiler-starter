@@ -1,0 +1,9 @@
+class L{
+	 void main(string[] args){
+		int[][][] a;
+		int x;
+	// a[1][2][3] can only be an integer	
+		x = a[1][2][3].length;
+	}
+}
+

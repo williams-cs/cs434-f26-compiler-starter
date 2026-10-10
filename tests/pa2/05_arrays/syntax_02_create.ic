@@ -1,0 +1,7 @@
+class K{
+	 void main(string[] args){
+	// not a valid initialization
+		int[] a = new int(10);
+	}
+}
+

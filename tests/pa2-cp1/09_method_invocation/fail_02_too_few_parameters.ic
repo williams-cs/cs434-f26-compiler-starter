@@ -1,0 +1,10 @@
+class R{
+	 void main(string[] args){
+		int b = m(1, "2");
+	}
+
+	 int m(int a, string b, int[] c){
+		return a + c.length;
+	}
+}
+

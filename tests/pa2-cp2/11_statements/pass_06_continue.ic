@@ -1,0 +1,13 @@
+class CONTINUE{
+	void main(string[] args){
+		while(true){
+			continue;
+			while(true){
+				while(true){
+					continue;
+				}
+			}
+		}
+	}
+}
+

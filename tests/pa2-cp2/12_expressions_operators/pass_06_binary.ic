@@ -1,0 +1,16 @@
+class A{
+	int a;
+	int[] b;
+	boolean bc;
+
+	void main(string[] args){
+	}
+	
+	void test() {
+		a = (1 + 2 - 4 + 7 - (b[0] / 3)) % 5;
+		bc = ((1 == 2) && (3 != 4)) || true && (5 <= 4) || (6 > 2);
+		bc = (2 == (1 - 2)) || true && (2 != 3);
+		bc = bc && (b[2] >= a) || (2 < 7/0);
+	}
+}
+

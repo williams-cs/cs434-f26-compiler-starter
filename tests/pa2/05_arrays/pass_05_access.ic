@@ -1,0 +1,6 @@
+class I{
+	 void main(string[] args){
+		string b = args[7];	
+	}
+}
+

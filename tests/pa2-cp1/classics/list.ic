@@ -1,0 +1,49 @@
+class Node {
+    int value;
+    Node next;
+}
+
+class List {
+    Node head;
+
+    void add(int value) {
+        Node n = new Node();
+        n.value = value;
+        n.next = head;
+        head = n;
+    }
+
+    int sum() {
+        int total = 0;
+        Node cur = head;
+        while (cur != null) {
+            total = total + cur.value;
+            cur = cur.next;
+        }
+        return total;
+    }
+
+    void print() {
+        Node cur = head;
+        while (cur != null) {
+            Library.printi(cur.value);
+            Library.print(" ");
+            cur = cur.next;
+        }
+        Library.print("\n");
+    }
+}
+
+class Main {
+    void main(string[] args) {
+        List list = new List();
+        int i = 0;
+        while (i < 10) {
+            list.add(i * i);
+            i = i + 1;
+        }
+        list.print();
+        Library.printi(list.sum());
+        Library.print("\n");
+    }
+}

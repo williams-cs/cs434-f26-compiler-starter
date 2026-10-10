@@ -1,0 +1,80 @@
+# ic.slex -- the Iced Coffee token language.
+#
+#   PATTERN { scala-code }   run the code on the matched lexeme; `text`
+#                            and `pos` are in scope; produce the Token
+#                            or call error(...)
+#   PATTERN                  no action: match and discard
+#
+# Maximal munch; ties go to the earliest rule.  %token rows are
+# ordinary rules at the point they appear, which is why the keywords
+# beat the identifier rule with no keyword table anywhere.
+
+%kinds ic.lex.TokenKind
+
+%{
+  import ic.error.LexicalError
+
+  /** Process the escapes in a string lexeme (quotes still attached). */
+  def unescape(lexeme: String): String =
+    val sb = StringBuilder()
+    var i = 1
+    while i < lexeme.length - 1 do
+      lexeme(i) match
+        case '\\' =>
+          sb += (lexeme(i + 1) match
+            case 't' => '\t'
+            case 'n' => '\n'
+            case 'r' => '\r'
+            case c   => c)
+          i += 2
+        case c => sb += c; i += 1
+    sb.toString
+%}
+
+%token
+  CLASS    "class"      EXTENDS  "extends"    RETURN   "return"
+  NEW      "new"        IF       "if"         ELSE     "else"
+  WHILE    "while"      BREAK    "break"      CONTINUE "continue"
+  LENGTH   "length"     LIBRARY  "Library"    THIS     "this"
+  VOID     "void"       INT      "int"        BOOLEAN  "boolean"
+  STRING   "string"     NULL     "null"
+
+  LBRACE   "{"          RBRACE   "}"          LPAREN   "("
+  RPAREN   ")"          LBRACKET "["          RBRACKET "]"
+  SEMI     ";"          COMMA    ","          DOT      "."
+  PLUS     "+"          MINUS    "-"          MULT     "*"
+  DIV      "/"          MOD      "%"          LEQ      "<="
+  LT       "<"          GEQ      ">="         GT       ">"
+  EQEQ     "=="         EQ       "="          NOTEQ    "!="
+  NOT      "!"          AND      "&&"         OR       "||"
+
+# ---- whitespace and comments: no action, no token -------------------
+[ \t\r\n]+
+//[^\n]*
+/\*([^*]|\*+[^*/])*\*+/
+
+# ---- tokens whose actions do the non-regular work -------------------
+true|false                  { Token(BOOLLIT, text, pos, text == "true") }
+
+[a-zA-Z][a-zA-Z0-9_]*       { Token(if text.head.isUpper then CLS_ID else ID, text, pos) }
+
+[0-9]+                      {
+    if text.length > 1 && text.head == '0' then
+      error("Improprerly formatted integer.")
+    val n = text.toIntOption.getOrElse(error("Integer out of range."))
+    Token(INTLIT, text, pos, n)
+}
+
+"([^"\\\n\t]|\\[tnr"\\])*"  { Token(STRINGLIT, unescape(text), pos) }
+
+# ---- error rules: reachable only when nothing above matches ---------
+# (the bad-escape message points at the escape, not the string start:
+# plain Scala, so the column arithmetic is just written out)
+"([^"\\\n\t]|\\[tnr"\\])*\\[^tnr"\\]
+                            {
+    throw LexicalError(pos.line, pos.col + text.length - 1,
+                       s"Invalid escape sequence < \\${text.last} >")
+}
+"                           { error("Beginning of unterminated string literal.") }
+/\*                         { error("Unterminated comment.") }
+.|\n                        { error(s"Invalid input character < $text >") }

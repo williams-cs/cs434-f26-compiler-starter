@@ -1,0 +1,23 @@
+class A{
+}
+
+class B extends A{
+}
+
+class C extends B{
+}
+
+class D{
+	A[] a;
+	B[] b;
+	C[] c;
+	
+	 void main(string[] args){}
+	
+	void test() {
+		a = b;
+		a = c;
+		b = c;
+	}
+}
+

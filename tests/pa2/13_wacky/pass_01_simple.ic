@@ -1,0 +1,6 @@
+class A{
+	void main(string[] args){
+		if(new boolean[][][][][5][4][3][2][1][0] == true) return;
+	}
+}
+

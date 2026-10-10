@@ -1,0 +1,64 @@
+class Quicksort {
+    int[] a;
+
+    int partition(int low, int high) {
+        int pivot = a[low];
+        int i = low;
+        int j = high;
+        int tmp;
+
+        while (true) {
+            while (a[i] < pivot) i = i + 1;
+            while (a[j] > pivot) j = j - 1;
+
+            if (i >= j) break;
+
+            tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp;
+            i = i + 1;
+            j = j - 1;
+        }
+
+        return j;
+    }
+
+    void quicksort(int low, int high) {
+        if (low < high) {
+            int mid = partition(low, high);
+            quicksort(low, mid);
+            quicksort(mid + 1, high);
+        }
+    }
+
+    void initArray() {
+        // A fixed pseudo-random permutation of 0..a.length-1, so the
+        // program prints the same thing on every run.
+        int i = 0;
+        while (i < a.length) {
+            a[i] = (i * 7919) % a.length;
+            i = i + 1;
+        }
+    }
+
+    void printArray() {
+        int i = 0;
+
+        Library.print("Array elements: ");
+        while (i < a.length) {
+            Library.printi(a[i]);
+            Library.print(" ");
+            i = i + 1;
+        }
+        Library.print("\n");
+    }
+
+    void main(string[] args) {
+        a = new int[20];
+
+        initArray();
+        printArray();
+        quicksort(0, a.length - 1);
+        printArray();
+    }
+}

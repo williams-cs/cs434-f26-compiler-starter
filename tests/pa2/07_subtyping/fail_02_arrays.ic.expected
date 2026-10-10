@@ -1,0 +1,2 @@
+Error: Line 18: Cannot store value of type B/*4*/[] into location of type A/*1*/[]
+Failed.

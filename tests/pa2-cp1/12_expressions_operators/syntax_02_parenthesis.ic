@@ -1,0 +1,13 @@
+class A{
+	int a;
+	int[] b;
+
+	void main(string[] args){
+		(new A()).doStuff();
+	}
+	
+	void doStuff() {
+		a = ((((((a)))))+b[0];
+	}
+}
+

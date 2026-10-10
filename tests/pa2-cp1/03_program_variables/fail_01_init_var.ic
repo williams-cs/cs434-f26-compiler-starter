@@ -1,0 +1,10 @@
+class A{
+	 void main(string[] args){
+		string a = args[0];
+		int n = args.length;
+	// n declared in the same scope as x
+		int x = n*n;
+		return;
+	}
+}
+
