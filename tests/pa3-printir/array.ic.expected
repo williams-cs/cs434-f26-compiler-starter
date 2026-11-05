@@ -1,0 +1,63 @@
+main:
+	formals:
+		args: 24
+
+	locals:
+		a: -8
+
+	temps:
+		t0: -24
+		t2: -64
+		t7: -72
+		t4: -16
+		t9: -32
+		t10: -48
+		t1: -88
+		t5: -80
+		t8: -40
+		t3: -96
+		t6: -56
+
+	tac:
+	checkBounds _ 3		# Check that new array at t0 has size > 1
+	t0 = new array[3]		# new array of size 3 in t0
+	a = t0		# Assignment to variable declaration
+	checkNull a		# Check if a is null
+	checkBounds a 0		# Check if a[0] is in bounds
+	a[0] = 10		# Store 10 in a[0]
+	checkNull a		# Check if array a is null
+	checkBounds a 0		# Check bounds of a[0]
+	t2 = a[0]		# Load a[0]
+	t1 = t2 + 1		# t2 + 1
+	checkNull a		# Check if a is null
+	checkBounds a 1		# Check if a[1] is in bounds
+	a[1] = t1		# Store t1 in a[1]
+	checkNull a		# Check if array a is null
+	checkBounds a 1		# Check bounds of a[1]
+	t4 = a[1]		# Load a[1]
+	t3 = t4 + 1		# t4 + 1
+	checkNull a		# Check if a is null
+	checkBounds a 2		# Check if a[2] is in bounds
+	a[2] = t3		# Store t3 in a[2]
+	checkNull a		# Check if array a is null
+	checkBounds a 0		# Check bounds of a[0]
+	t7 = a[0]		# Load a[0]
+	checkNull a		# Check if array a is null
+	checkBounds a 1		# Check bounds of a[1]
+	t8 = a[1]		# Load a[1]
+	t6 = t7 + t8		# t7 + t8
+	checkNull a		# Check if array a is null
+	checkBounds a 2		# Check bounds of a[2]
+	t9 = a[2]		# Load a[2]
+	t5 = t6 + t9		# t6 + t9
+	call Library.printi(t5)		
+	call Library.print(
+)		
+	checkNull a		# Check for null array at a
+	t10 = a.length		# Store length of array a in t10
+	call Library.printi(t10)		
+	call Library.print(
+)		
+	
+
+Success.

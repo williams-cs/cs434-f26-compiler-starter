@@ -1,0 +1,42 @@
+class Shape {
+    int area() {
+        return 0;
+    }
+
+    void describe() {
+        Library.print("area: ");
+        Library.printi(area());
+        Library.print("\n");
+    }
+}
+
+class Square extends Shape {
+    int side;
+
+    int area() {
+        return side * side;
+    }
+}
+
+class Rectangle extends Shape {
+    int width;
+    int height;
+
+    int area() {
+        return width * height;
+    }
+}
+
+class Main {
+    void main(string[] args) {
+        Square s = new Square();
+        Rectangle r = new Rectangle();
+        Shape plain = new Shape();
+        s.side = 4;
+        r.width = 3;
+        r.height = 5;
+        s.describe();
+        r.describe();
+        plain.describe();
+    }
+}

@@ -1,0 +1,8 @@
+
+
+      class Test {  void main(string[] a ) {
+      int x = 1;
+      int y = 2;
+      Library.printb(x < y);
+      }}
+    

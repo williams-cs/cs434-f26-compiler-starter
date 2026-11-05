@@ -1,0 +1,9 @@
+
+ 
+      class Test  { 
+         int x;
+         void x() { }
+         void main(string[] a ) { 
+         }
+     }
+    

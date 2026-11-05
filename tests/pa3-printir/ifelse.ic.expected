@@ -1,0 +1,26 @@
+main:
+	formals:
+		args: 24
+
+	locals:
+		x: -8
+
+	temps:
+		t0: -16
+		t1: -24
+
+	tac:
+	x = 10		# Assignment to variable declaration
+	t0 = (x > 5)		# x > 5
+	t1 = !t0		
+	cjump t1 else0		# Start of if-banch 0
+	call Library.println(big)		
+	jump endif0		
+	
+	label else0		
+	call Library.println(small)		
+	
+	label endif0		# End of if-branch 0
+	
+
+Success.

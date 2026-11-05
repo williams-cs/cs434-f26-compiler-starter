@@ -1,0 +1,2 @@
+
+class Main {  void main(string[] args) {int[] x = new int[10];x[-20]=1;  }}

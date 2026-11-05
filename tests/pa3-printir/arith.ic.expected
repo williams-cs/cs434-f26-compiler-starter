@@ -1,0 +1,28 @@
+main:
+	formals:
+		args: 24
+
+	locals:
+		y: -8
+		x: -16
+		z: -24
+
+	temps:
+		t2: -40
+		t0: -32
+		t1: -48
+
+	tac:
+	x = 6		# Assignment to variable declaration
+	y = 7		# Assignment to variable declaration
+	z = 0		# Variable declaration at z, zero out stack entry
+	t1 = x + y		# x + y
+	t2 = x - y		# x - y
+	t0 = t1 * t2		# t1 * t2
+	z = t0		# z = t0
+	call Library.printi(z)		
+	call Library.print(
+)		
+	
+
+Success.

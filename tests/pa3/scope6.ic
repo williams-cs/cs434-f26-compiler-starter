@@ -1,0 +1,15 @@
+
+ 
+      class T {
+         string f(int x, int y) { int x; int z; return ""; } 
+      }
+      class Test extends T  { 
+         int x() { return -1; }
+         void main(string[] a) { 
+            x();
+            this.x();
+            f(2,3);
+            this.f(2,3);
+         }
+     }
+    

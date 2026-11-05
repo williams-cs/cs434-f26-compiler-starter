@@ -1,0 +1,33 @@
+class Reverse {
+    void print(int[] a) {
+        int i = 0;
+        while (i < a.length) {
+            Library.printi(a[i]);
+            Library.print(" ");
+            i = i + 1;
+        }
+        Library.print("\n");
+    }
+
+    void main(string[] args) {
+        int[] a = new int[6];
+        int i = 0;
+        int tmp;
+        int j;
+        while (i < a.length) {
+            a[i] = i * 10;
+            i = i + 1;
+        }
+        print(a);
+        i = 0;
+        j = a.length - 1;
+        while (i < j) {
+            tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp;
+            i = i + 1;
+            j = j - 1;
+        }
+        print(a);
+    }
+}

@@ -1,0 +1,12 @@
+class Loop {
+    void main(string[] args) {
+        int i = 0;
+        int total = 0;
+        while (i < 5) {
+            total = total + i;
+            i = i + 1;
+        }
+        Library.printi(total);
+        Library.print("\n");
+    }
+}

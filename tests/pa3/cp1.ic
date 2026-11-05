@@ -1,0 +1,23 @@
+
+ 
+      class Test  { 
+         void main(string[] a ) { 
+           int x = 3;
+           int y = 11;
+	   {
+             int z = x + y;
+             int c;
+             if (1 < 2) {
+		   x = 2;
+             } else {
+		   x = 1;
+             }
+             c = x + 1;
+             Library.printi(x);
+             Library.printi(y);
+             Library.printi(z);
+             Library.printi(c);
+	   }
+        }
+     }
+    

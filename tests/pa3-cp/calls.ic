@@ -1,0 +1,40 @@
+// User-method calls: even and odd argument counts (stack alignment at
+// the call), nested calls, and reassignment of a formal (must NOT leak
+// back to the caller -- IC is call-by-value).
+class C {
+  int five() {
+    return 5;
+  }
+
+  int add(int a, int b) {
+    int t;
+    t = a + b;
+    return t;
+  }
+
+  int addThree(int a, int b, int c) {
+    return a + b + c;
+  }
+
+  int mutate(int x) {
+    x = x + 1;
+    return x;
+  }
+}
+
+class Main {
+  void main(string[] args) {
+    C c;
+    int b;
+    c = new C();
+    b = 16;
+    Library.printi(c.add(b, c.five()));
+    Library.println("");
+    Library.printi(c.addThree(1, 2, c.add(3, 4)));
+    Library.println("");
+    Library.printi(c.mutate(b));
+    Library.println("");
+    Library.printi(b);
+    Library.println("");
+  }
+}

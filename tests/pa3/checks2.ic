@@ -1,0 +1,13 @@
+
+ 
+      class Test  { 
+         void main(string[] a ) { 
+        int x = 100;
+	{
+		int[] y = new int[x];
+        	int[] z = new int[x];
+        	y[1] = z[2];
+	}
+      }
+     }
+    

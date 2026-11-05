@@ -1,0 +1,19 @@
+class Sieve {
+    void main(string[] args) {
+        boolean[] composite = new boolean[50];
+        int i = 2;
+        while (i < 50) {
+            if (!composite[i]) {
+                int j = i * i;
+                Library.printi(i);
+                Library.print(" ");
+                while (j < 50) {
+                    composite[j] = true;
+                    j = j + i;
+                }
+            }
+            i = i + 1;
+        }
+        Library.print("\n");
+    }
+}

@@ -1,0 +1,47 @@
+sum:
+	formals:
+		
+
+	locals:
+		
+
+	temps:
+		t2: -16
+		t0: -8
+		t1: -24
+
+	tac:
+	checkNull this		# Check if 'this' is null
+	t1 = this.x		
+	checkNull this		# Check if 'this' is null
+	t2 = this.y		
+	t0 = t1 + t2		# t1 + t2
+	ret t0		# Return w/return value t0
+	
+
+main:
+	formals:
+		args: 24
+
+	locals:
+		p: -8
+
+	temps:
+		t3: -24
+		t4: -16
+
+	tac:
+	t3 = new ClassNode(Point,,List(FieldNode(int,x,2), FieldNode(int,y,3), MethodNode(int,sum,List(),BlockNode(List(),List(ReturnNode(BinOpNode(IdNode(x,6),IdNode(y,6),+,6),6)),5),5)),1)()		# Allocate new object of type 'Point'
+	p = t3		# Assignment to variable declaration
+	checkNull p		# Check if 'p' is null
+	p.x = 3		# Store 3 in field p.x
+	checkNull p		# Check if 'p' is null
+	p.y = 4		# Store 4 in field p.y
+	checkNull p		# Check if p is null
+	t4 = call p_sum(p)		# Call p.sum(p)
+	call Library.printi(t4)		
+	call Library.print(
+)		
+	
+
+Success.

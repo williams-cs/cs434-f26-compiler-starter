@@ -1,0 +1,38 @@
+add:
+	formals:
+		a: 24
+		b: 32
+
+	locals:
+		
+
+	temps:
+		t0: -8
+
+	tac:
+	t0 = a + b		# a + b
+	ret t0		# Return w/return value t0
+	
+
+main:
+	formals:
+		args: 24
+
+	locals:
+		
+
+	temps:
+		t2: -8
+		t1: -16
+
+	tac:
+	checkNull this		# Check if this is null
+	t2 = call this_add(this,1,2)		# Call this.add(this,1,2)
+	checkNull this		# Check if this is null
+	t1 = call this_add(this,3,t2)		# Call this.add(this,3,t2)
+	call Library.printi(t1)		
+	call Library.print(
+)		
+	
+
+Success.

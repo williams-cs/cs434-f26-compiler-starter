@@ -1,0 +1,20 @@
+
+ 
+      class Test  { 
+        int f;
+        int g;
+         void main(string[] a ) { 
+          Test t = new Test();
+          Test t2 = new Test();
+          t.f = 1;
+          if (t.f < 10) {
+            t.g = 2;
+            t2.f = 11;
+          } else {
+            t.f = 11;
+          }
+          t.g = 2;
+          t2.g = 222;
+        }
+     }
+    

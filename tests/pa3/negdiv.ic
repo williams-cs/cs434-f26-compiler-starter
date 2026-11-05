@@ -1,0 +1,16 @@
+// Negative dividends: idivq requires cqto sign extension; zeroing %rdx
+// (or using 32-bit cltd) makes (0-7)/2 fault or produce garbage.
+class Main {
+  void main(string[] args) {
+    int a;
+    a = 0 - 7;
+    Library.printi(a / 2);
+    Library.println("");
+    Library.printi(a % 2);
+    Library.println("");
+    Library.printi((0 - 12) / (0 - 4));
+    Library.println("");
+    Library.printi(12 % (0 - 5));
+    Library.println("");
+  }
+}

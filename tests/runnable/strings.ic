@@ -1,0 +1,12 @@
+class Strings {
+    string join(string a, string b) {
+        return a + ", " + b + "!";
+    }
+
+    void main(string[] args) {
+        string greeting = "Hello";
+        string name = "IC";
+        Library.println(join(greeting, name));
+        Library.println("The answer is " + Library.itos(6 * 7));
+    }
+}

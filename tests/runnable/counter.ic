@@ -1,0 +1,24 @@
+class Counter {
+    int count;
+
+    void increment() {
+        count = count + 1;
+    }
+
+    int get() {
+        return count;
+    }
+}
+
+class Main {
+    void main(string[] args) {
+        Counter c = new Counter();
+        int i = 0;
+        while (i < 7) {
+            c.increment();
+            i = i + 1;
+        }
+        Library.printi(c.get());
+        Library.print("\n");
+    }
+}

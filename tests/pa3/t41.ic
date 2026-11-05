@@ -1,0 +1,15 @@
+
+   /* inherited fields */
+      class Super { int x; }
+      class Test extends Super { 
+        int y;
+        int f() { return this.x; }
+         void main(string[] a ) {
+          Test t = new Test();
+          t.x = 10;
+          Library.printi(t.x);
+          t.y = 13;
+          Library.printi(t.y);
+        }
+     }
+    

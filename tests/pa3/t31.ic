@@ -1,0 +1,16 @@
+
+
+      class Test { 
+         void f(int x, boolean b, string c) {
+          Library.printi(x);
+          Library.printb(b);
+          Library.print(c);
+          Library.print(Library.itos(x));
+          Library.printi(Library.stoi(c,-11));
+          Library.printi(Library.stoi("moo",-11));
+        }
+         void main(string[] a ) {
+          f(1, false, "33");
+        }
+      }
+    

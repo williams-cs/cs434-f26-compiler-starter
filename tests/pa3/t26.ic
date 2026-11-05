@@ -1,0 +1,2 @@
+
+class Main {  void main(string[] args) {     Library.printi(7%4);  }}

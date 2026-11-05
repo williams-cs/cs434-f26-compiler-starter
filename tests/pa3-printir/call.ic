@@ -1,0 +1,10 @@
+class Call {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    void main(string[] args) {
+        Library.printi(add(3, add(1, 2)));
+        Library.print("\n");
+    }
+}

@@ -1,0 +1,10 @@
+class Arith {
+    void main(string[] args) {
+        int x = 6;
+        int y = 7;
+        int z;
+        z = (x + y) * (x - y);
+        Library.printi(z);
+        Library.print("\n");
+    }
+}

@@ -1,0 +1,15 @@
+class Table {
+    void main(string[] args) {
+        int row = 1;
+        while (row <= 5) {
+            int col = 1;
+            while (col <= 5) {
+                Library.printi(row * col);
+                Library.print(" ");
+                col = col + 1;
+            }
+            Library.print("\n");
+            row = row + 1;
+        }
+    }
+}

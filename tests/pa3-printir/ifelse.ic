@@ -1,0 +1,10 @@
+class IfElse {
+    void main(string[] args) {
+        int x = 10;
+        if (x > 5) {
+            Library.println("big");
+        } else {
+            Library.println("small");
+        }
+    }
+}

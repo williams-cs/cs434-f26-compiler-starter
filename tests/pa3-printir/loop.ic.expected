@@ -1,0 +1,35 @@
+main:
+	formals:
+		args: 24
+
+	locals:
+		total: -8
+		i: -16
+
+	temps:
+		t0: -24
+		t1: -40
+		t3: -48
+		t2: -32
+
+	tac:
+	i = 0		# Assignment to variable declaration
+	total = 0		# Assignment to variable declaration
+	
+	label loop0		# Start of loop 0
+	t0 = (i < 5)		# i < 5
+	t1 = !t0		
+	cjump t1 endloop0		
+	t2 = total + i		# total + i
+	total = t2		# total = t2
+	t3 = i + 1		# i + 1
+	i = t3		# i = t3
+	jump loop0		
+	
+	label endloop0		# End of loop 0
+	call Library.printi(total)		
+	call Library.print(
+)		
+	
+
+Success.

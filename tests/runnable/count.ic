@@ -1,0 +1,11 @@
+class Count {
+    void main(string[] args) {
+        int i = 1;
+        while (i <= 10) {
+            Library.printi(i);
+            Library.print(" ");
+            i = i + 1;
+        }
+        Library.print("\n");
+    }
+}

@@ -1,0 +1,11 @@
+
+ 
+      class T {
+         string x() { return null; } 
+      }
+      class Test extends T  { 
+         int x() { return -1; }
+         void main(string[] a ) { 
+         }
+     }
+    
